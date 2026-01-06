@@ -41,3 +41,18 @@ app.post('/send-order', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Сервер запущен! Работает по адресу: http://localhost:${PORT}`);
 });
+
+const rateLimit = require('express-rate-limit');
+
+const apiLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 час
+    max: 3, // Лимит: 3 запроса с одного IP в час
+    message: "Слишком много заявок с вашего адреса, попробуйте позже.",
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// Применяем только к маршруту отправки формы
+app.post('/send-order', apiLimiter, (req, res) => {
+    // твой код отправки в телеграм
+});
