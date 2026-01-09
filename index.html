@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWay — Стриминговое Агентство</title>
+    <!-- Шрифт Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- ПОДКЛЮЧЕНИЕ ИКОНОК (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Наш CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    
+    <!-- Шапка сайта -->
+        <header class="header">
+            <div class="container header-container">
+                <!-- Логотип -->
+                <div class="logo">Star<span>Way</span></div>
+        
+                <!-- Кнопка Бургер (появится только на телефоне) -->
+                <div class="burger-btn" id="burgerBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Обертка меню (на ПК видно, на телефоне скрыто) -->
+                <div class="nav-wrapper" id="mobileMenu">
+                    <!-- Кнопка Закрыть (Крестик) -->
+                    <div class="close-btn" id="closeBtn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+
+                    <nav class="nav">
+                        <a href="#about" class="menu-link">О нас</a><br class="mobile-break">
+                        <a href="#benefits" class="menu-link">Преимущества</a><br class="mobile-break">
+                        <a href="#faq" class="menu-link">FAQ</a>
+                    </nav>
+
+                    <div class="header-socials">
+                        <a href="https://t.me/starwayagency" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <a href="#contact" class="nav-btn menu-link">Стать моделью</a>
+                </div>
+            </div>
+        </header>
+
+    <!-- Главный экран -->
+  <main>
+    
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="container hero-content">
+            <h1>Зажги свою звезду</h1>
+            <p>StarWay — твой проводник в мир успешного стриминга.</p>
+            <a href="#contact" class="main-btn">Подать заявку</a>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Твои возможности</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="icon">💎</div>
+                        <h3>Высокий доход</h3>
+                        <p>Наши топ-модели выходят на $2000+ уже в первый месяц.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🚀</div>
+                        <h3>Быстрый старт</h3>
+                        <p>Помогаем с оформлением, оборудованием и первой трансляцией.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🔒</div>
+                        <h3>Анонимность</h3>
+                        <p>Блокируем доступ для стран СНГ. Твоя конфиденциальность — закон.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">💬</div>
+                        <h3>Поддержка 24/7</h3>
+                        <p>Личный менеджер всегда на связи, чтобы помочь с любым вопросом.</p>
+                    </div>
+                </div> 
+        </div>    
+    </section>
+
+    <!-- Секция О нас + СЛАЙДЕР -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            
+            <div class="about-text">
+                <h2>Мы — StarWay</h2>
+                <p>Мы не просто агентство, мы комьюнити успешных и амбициозных людей.</p>
+                <p>Мы гарантируем полную конфиденциальность, юридическую поддержку и дружелюбную атмосферу в коллективе.</p>
+                <ul class="about-list">
+                    <li>✓ Помощь на каждом этапе</li>
+                    <li>✓ Обучение с нуля</li>
+                    <li>✓ Юридическая чистота</li>
+                    <li>✓ Выплаты в крипте или на карту</li>
+                </ul>
+                </ul>
+                
+                <!-- Дублируем иконки и в тексте о нас (опционально) -->
+              
+            </div>
+
+            <!-- СЛАЙДЕР С КАРТИНКАМИ -->
+            <div class="about-image">
+                
+                <!-- Слайд 1 -->
+                <div class="slide fade">
+                    <!-- Замените src на ваше фото 1080x1920 -->
+                    <img src="./img/ff.jpg" alt="Model 1">
+                </div>
+
+                <!-- Слайд 2 -->
+                <div class="slide fade">
+                    <!-- Замените src на ваше фото 1080x1920 -->
+                    <img src="./img/gggg.jpg" alt="Model 2">
+                </div>
+
+                <!-- Слайд 3 -->
+                <div class="slide fade">
+                    <!-- Замените src на ваше фото 1080x1920 -->
+                    <img src="./img/ffff.jpg" alt="Model 3">
+                </div>
+
+                <div class="slide fade">
+                    <!-- Замените src на ваше фото 1080x1920 -->
+                    <img src="./img/fff.jpg" alt="Model 4">
+                </div>
+
+                <div class="slide fade">
+                    <!-- Замените src на ваше фото 1080x1920 -->
+                    <img src="./img/fff.jpg" alt="Model 5">
+                </div>
+
+                <!-- Точки навигации (снизу) -->
+                <div class="dots-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- Секция FAQ -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq-container">
+            
+            <!-- Вопрос 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Как насчёт отпусков и увольнения?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Можно брать отпуск каждые 2 месяца. При увольнении достаточно предупредить нас за неделю. Аккаунты удаляются, все заработанные средства и бонусы выплачиваются в полном объёме.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Как и куда приходит зарплата?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Все деньги ты получаешь на карту в рублях по текущему курсу доллара. Зарплата поступает каждую неделю. Для новеньких моделей мы предлагаем авансы: в первую неделю можно забирать всю заработанную сумму сразу после смены, а во вторую и третью неделю – 50% от заработанной суммы.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Можно ли работать не раздеваясь?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да! Мы работаем со всеми категориями: <br>
+                    — <b>Shy ("скромный")</b> – мягкое общение в уютной атмосфере без провокаций;<br>
+                    — <b>Non-nude</b> – стримы без раздевания;<br>
+                    — <b>Mistress</b> – доминирование.<br>
+                    Но если захочешь, можешь выбрать варианты погорячее – hot tease или fetish. Ты сама определяешь, насколько откровенной готова быть.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Работаете ли с парнями и парами?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>К сожалению, мы работаем только с девушками. Но ты можешь оставить свою заявку на вакансию оператора или рекрутера.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Могу ли я работать без знания иностранных языков?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Многие девушки работают с операторами-переводчиками, которые берут на себя всё общение с иностранными пользователями.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 6 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Могут ли меня увидеть друзья и знакомые?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Невозможно. На сайтах огромное количество виртуальных комнат, случайным образом тебя вряд ли могут увидеть. Мы блокируем доступ из стран СНГ и сотрудничаем с иностранными сайтами, которые не популярны в России. Твоя конфиденциальность — наш приоритет.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 7 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Будут ли видеть мое имя и личные данные?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Все модели работают под никнеймами. Данные, видимые пользователям — выдуманные. Ты можешь выбрать любую страну, возраст и легенду. Реальные имя и телефон надежно скрыты.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 8 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Что мне одевать на стримы?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы рекомендуем однотонную светлую одежду. Если сомневаешься, наш модератор поможет подобрать образ из твоего гардероба.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 9 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Что если у меня нет хороших фотографий?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы сотрудничаем с фотографами, которые сделают профессиональные снимки. Для моделей фотосессии проводятся бесплатно.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 10 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Как скоро я могу начать первый стрим?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>С момента регистрации должны пройти минимум сутки, чтобы аккаунты прошли модерацию и мы подготовили их для успешного старта.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 11 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Какой график работы?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы подберем комфортный режим. Главное — не пропускать запланированные смены. Можно совмещать с учебой, но помни: стабильный высокий доход требует регулярной работы.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Присоединяйся к нам</h2>
+            <form class="form-box" id="tg">
+                <!-- ИМЯ -->
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Как тебя зовут?" required>
+                </div>
+    
+                <!-- КОНТАКТ (Обратите внимание: id стоит ВНУТРИ тега input, а не div) -->
+                <div class="input-group">
+                    <input type="text" id="tg_nick" placeholder="Telegram / WhatsApp" required>
+                </div>
+    
+                <!-- ВОЗРАСТ -->
+                <div class="input-group">
+                    <input type="number" id="age" placeholder="Возраст" required>
+                </div>
+    
+                <button type="submit" class="submit-btn">Хочу в команду</button>
+                <div id="success-msg" style="display:none; color: #a020f0; margin-top:10px; font-weight:bold;">Заявка отправлена!</div>
+            </form>
+        </div>
+    </section>
+
+</main>
+    
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Star<span>Way</span></div>
+                <div class="footer-socials">
+                    <a href="https://t.me/starwayagency"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 StarWay Agency.</p>
+        </div>
+    </footer>
+
+    <!-- Логика слайдера -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Библиотека для отправки -->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    /* === НАСТРОЙКИ СЕРВЕРА === */
+    // Теперь мы шлем данные сюда, а сервер сам перешлет их в Телеграм.
+    // Убедитесь, что черное окно (node index.js) запущено!
+    const SERVER_URL = "https://starway-backend-demo1.onrender.com";
+
+    /* === ЛОГИКА ОТПРАВКИ === */
+    const formElement = document.getElementById('tg');
+    
+    if (formElement) {
+        formElement.addEventListener('submit', function(e) {
+            e.preventDefault(); // Остановить перезагрузку страницы
+
+            // Получаем элементы полей
+            const nameInput = document.getElementById('name');
+            const contactInput = document.getElementById('tg_nick'); 
+            const ageInput = document.getElementById('age');
+
+            // Берем значения (текст внутри полей)
+            const name = nameInput ? nameInput.value : "-";
+            const contact = contactInput ? contactInput.value : "-"; 
+            const age = ageInput ? ageInput.value : "-";
+
+            /* 
+               Мы отправляем чистые данные на ваш сервер. 
+               Текст сообщения формируется уже там, внутри index.js 
+            */
+            axios.post(SERVER_URL, {
+                name: name,
+                contact: contact,
+                age: age
+            })
+            .then((res) => {
+                // Очищаем поля после успешной отправки
+                if(nameInput) nameInput.value = "";
+                if(contactInput) contactInput.value = "";
+                if(ageInput) ageInput.value = "";
+                
+                // Показываем сообщение об успехе
+                const msg = document.getElementById('success-msg');
+                msg.style.display = "block";
+                setTimeout(() => { msg.style.display = "none"; }, 4000);
+            })
+            .catch((err) => {
+                console.error("Ошибка отправки:", err);
+                // Выводим понятную ошибку, если сервер не работает
+                alert("Ошибка! Не удалось связаться с сервером. Проверьте, запущено ли черное окно с командой 'node index.js'.");
+            });
+        });
+    }
+
+    /* === СЛАЙДЕР (Оставляем без изменений) === */
+    let slideIndex = 1;
+    try { showSlides(slideIndex); } catch(e){} 
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+
+        if (slides.length === 0) return; 
+
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; 
+            slides[i].classList.remove("active-slide");
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(() => {
+            slides[slideIndex-1].classList.add("active-slide");
+        }, 10);
+        if (dots.length > 0) {
+            dots[slideIndex-1].className += " active";
+        }
+    }
+
+    /* === МОБИЛЬНОЕ МЕНЮ === */
+    const burgerBtn = document.getElementById('burgerBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuLinks = document.querySelectorAll('.menu-link'); // Ссылки внутри меню
+
+    // Открыть меню
+    burgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта
+    });
+
+    // Закрыть меню (на крестик)
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = ''; // Возвращаем скролл
+    });
+
+    // Закрыть меню при клике на любую ссылку (чтобы перекинуло к секции)
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+
+
+    /* === FAQ ACCORDION === */
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            // Если хотите, чтобы при открытии одного остальные закрывались - раскомментируйте код ниже:
+            /*
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+            */
+
+            // Переключаем класс active
+            item.classList.toggle('active');
+
+            // Анимация открытия через max-height
+            if (item.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
