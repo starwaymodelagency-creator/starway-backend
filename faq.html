@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — StarWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    
+    <style>
+        /* Доп. стили для этой страницы, чтобы отделить контент от шапки */
+        .page-content {
+            padding-top: 120px; /* Отступ под фиксированную шапку */
+            min-height: 80vh;   /* Чтобы футер был внизу */
+            background: #0f0f0f;
+        }
+        
+        /* Стили плавающей кнопки (дублируем, чтобы была и тут) */
+        .float-tg {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: linear-gradient(45deg, #0088cc, #36aee2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: white;
+            font-size: 30px; box-shadow: 0 5px 20px rgba(0, 136, 204, 0.5);
+            z-index: 1000; transition: 0.3s; animation: pulse-btn 2s infinite;
+        }
+        .float-tg:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0, 136, 204, 0.7); }
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+        }
+        @media (max-width: 768px) { .float-tg { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; } }
+    </style>
+</head>
+<body>
+
+    <a href="https://t.me/starwakurator" target="_blank" class="float-tg" title="Написать менеджеру">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Star<span>Way</span></a>
+    
+            <div class="burger-btn" id="burgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="nav-wrapper" id="mobileMenu">
+                <div class="close-btn" id="closeBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <nav class="nav">
+                    <a href="index.html" class="menu-link">Главная</a>
+                    <a href="index.html#about" class="menu-link">О нас</a>
+                    <a href="index.html#benefits" class="menu-link">Преимущества</a>
+                </nav>
+
+                <div class="header-socials">
+                    <a href="https://t.me/starwakurator" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <a href="index.html#contact" class="nav-btn menu-link">Стать моделью</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="faq-section">
+            <div class="container">
+                <h1 class="section-title" style="margin-bottom: 50px;">Вопросы и ответы</h1>
+                
+                <div class="faq-container">
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Как насчёт отпусков и увольнения?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Можно брать отпуск каждые 2 месяца. При увольнении достаточно предупредить нас за неделю. Аккаунты удаляются, все заработанные средства и бонусы выплачиваются в полном объёме.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Как и куда приходит зарплата?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Все деньги ты получаешь на карту в рублях по текущему курсу доллара. Зарплата поступает каждую неделю. Для новеньких моделей мы предлагаем авансы.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Можно ли работать не раздеваясь?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да! Мы работаем со всеми категориями: Shy, Non-nude, Mistress. Ты сама определяешь границы.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Работаете ли с парнями и парами?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>К сожалению, мы работаем только с девушками. Но ты можешь оставить свою заявку на вакансию оператора или рекрутера.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Могу ли я работать без знания иностранных языков?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Многие девушки работают с операторами-переводчиками, которые берут на себя всё общение с иностранными пользователями.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Могут ли меня увидеть друзья и знакомые?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Невозможно. Мы блокируем доступ из стран СНГ. Твоя конфиденциальность — наш приоритет.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Будут ли видеть мое имя и личные данные?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Все модели работают под никнеймами. Реальные имя и телефон надежно скрыты.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Что мне одевать на стримы?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Мы рекомендуем однотонную светлую одежду. Если сомневаешься, наш модератор поможет подобрать образ.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Что если у меня нет хороших фотографий?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Мы сотрудничаем с фотографами, которые сделают профессиональные снимки. Для моделей фотосессии бесплатны.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Как скоро я могу начать первый стрим?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>С момента регистрации должны пройти минимум сутки для модерации.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Какой график работы?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Мы подберем комфортный режим. Главное — не пропускать запланированные смены.</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="index.html#contact" class="main-btn">Оставить заявку</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Star<span>Way</span></div>
+                <div class="footer-socials">
+                    <a href="https://t.me/starwayagency"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 StarWay Agency.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            /* === МЕНЮ === */
+            const burgerBtn = document.getElementById('burgerBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if(burgerBtn) burgerBtn.onclick = () => { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; };
+            if(closeBtn) closeBtn.onclick = () => { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; };
+
+            /* === ЛОГИКА FAQ === */
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const q = item.querySelector('.faq-question');
+                const a = item.querySelector('.faq-answer');
+                q.onclick = () => {
+                    item.classList.toggle('active');
+                    a.style.maxHeight = item.classList.contains('active') ? a.scrollHeight + "px" : null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

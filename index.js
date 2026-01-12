@@ -3,50 +3,83 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const rateLimit = require('express-rate-limit');
+const multer = require('multer');       // Для обработки загрузки
+const FormData = require('form-data');  // Для пересылки в ТГ
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Render сам назначит порт
+const PORT = process.env.PORT || 3000;
+
+// Настройка Multer: храним файл в оперативной памяти (RAM), а не на диске
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use(express.json());
 
-// Ограничение: 3 заявки в час с одного IP
+// Ограничение: защита от спама (15 запросов в час)
 const apiLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, 
-    max: 3, 
-    message: { status: 'error', message: "Слишком много заявок, попробуйте позже." },
+    max: 15, 
+    message: { status: 'error', message: "Слишком много попыток. Попробуйте позже." },
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-// 1. Добавляем ответ для главной страницы (чтобы не было "Cannot GET /")
 app.get('/', (req, res) => {
-    res.send('Сервер StarWay запущен и работает!');
+    res.send('Server is working!');
 });
 
-// 2. Основной маршрут для заявок (с лимитом)
+// --- 1. ОБЫЧНАЯ ЗАЯВКА (Текст) ---
 app.post('/send-order', apiLimiter, async (req, res) => {
     const { name, contact, age } = req.body;
-
-    const TOKEN = process.env.TG_TOKEN;
-    const CHAT_ID = process.env.TG_CHAT_ID;
-    const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
-    const message = `<b>🔥 Новая заявка с сайта!</b>\n\n` +
-                    `👤 <b>Имя:</b> ${name}\n` +
-                    `📱 <b>Контакт:</b> ${contact}\n` +
-                    `🎂 <b>Возраст:</b> ${age}`;
+    const message = `<b>🔥 Новая заявка!</b>\n👤 <b>Имя:</b> ${name}\n📱 <b>Контакт:</b> ${contact}\n🎂 <b>Возраст:</b> ${age}`;
 
     try {
-        await axios.post(URI_API, {
-            chat_id: CHAT_ID,
+        await axios.post(`https://api.telegram.org/bot${process.env.TG_TOKEN}/sendMessage`, {
+            chat_id: process.env.TG_CHAT_ID,
             parse_mode: 'html',
             text: message
         });
         res.json({ status: 'ok' });
     } catch (error) {
-        console.error('Ошибка ТГ:', error.response ? error.response.data : error.message);
+        console.error('Ошибка отправки текста:', error.message);
         res.status(500).json({ status: 'error' });
+    }
+});
+
+// --- 2. ВЕРИФИКАЦИЯ (Фото паспорта) ---
+app.post('/upload-passport', apiLimiter, upload.single('passport_photo'), async (req, res) => {
+    try {
+        // Проверяем, прислал ли пользователь файл
+        if (!req.file) {
+            return res.status(400).json({ status: 'error', message: 'Файл не выбран' });
+        }
+
+        const contact = req.body.contact || "Не указан";
+        
+        // Формируем "посылку" для Телеграма
+        const form = new FormData();
+        form.append('chat_id', process.env.TG_CHAT_ID);
+        form.append('caption', `<b>🕵️ Верификация (18+)</b>\n📱 Контакт: ${contact}`);
+        form.append('parse_mode', 'html');
+        
+        // Прикрепляем файл прямо из оперативной памяти
+        form.append('photo', req.file.buffer, {
+            filename: req.file.originalname, // Имя файла (например, image.jpg)
+            contentType: req.file.mimetype // Тип файла
+        });
+
+        // Отправляем боту
+        await axios.post(`https://api.telegram.org/bot${process.env.TG_TOKEN}/sendPhoto`, form, {
+            headers: {
+                ...form.getHeaders() // Важные заголовки для передачи файла
+            }
+        });
+
+        res.json({ status: 'ok', message: 'Фото успешно отправлено' });
+
+    } catch (error) {
+        console.error('Ошибка отправки фото:', error.message);
+        res.status(500).json({ status: 'error', message: 'Ошибка на сервере' });
     }
 });
 
